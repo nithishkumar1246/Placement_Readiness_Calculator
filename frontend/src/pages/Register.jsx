@@ -15,7 +15,7 @@ export const Register = () => {
   
   // Student Profile Fields
   const [name, setName] = useState('');
-  const [department, setDepartment] = useState('Computer Science & Engineering');
+  const [department, setDepartment] = useState('');
   const [year, setYear] = useState('4th Year');
   const [cgpa, setCgpa] = useState('');
 
@@ -235,17 +235,14 @@ export const Register = () => {
                     <label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
                       Department
                     </label>
-                    <select
+                    <input
+                      type="text"
+                      required={role === 'student'}
+                      placeholder="e.g. Computer Science & Engineering"
                       className="w-full glass-input text-sm bg-white/50 dark:bg-slate-900/30 text-slate-800 dark:text-slate-100"
                       value={department}
                       onChange={(e) => setDepartment(e.target.value)}
-                    >
-                      {departmentsList.map((dept) => (
-                        <option key={dept} value={dept} className="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
-                          {dept}
-                        </option>
-                      ))}
-                    </select>
+                    />
                   </div>
 
                   <div>

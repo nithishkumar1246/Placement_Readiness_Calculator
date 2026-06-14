@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { GlassCard } from '../components/GlassCard';
 import { ThemeToggle } from '../components/ThemeToggle';
-import { GraduationCap, Mail, Lock, ArrowRight, Info } from 'lucide-react';
+import { GraduationCap, Mail, Lock, ArrowRight } from 'lucide-react';
 
 export const Login = () => {
   const { login } = useAuth();
@@ -32,15 +32,6 @@ export const Login = () => {
     }
   };
 
-  const fillCredentials = (type) => {
-    if (type === 'student') {
-      setEmail('student@placement.com');
-      setPassword('studentpassword');
-    } else {
-      setEmail('admin@placement.com');
-      setPassword('adminpassword');
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-mesh px-4 py-8 relative">
@@ -64,7 +55,7 @@ export const Login = () => {
         {/* Login Card */}
         <GlassCard className="border border-white/20 dark:border-slate-800/30" glow>
           <h2 className="text-xl font-semibold mb-6 text-slate-800 dark:text-slate-100">Sign In</h2>
-          
+
           {error && (
             <div className="mb-4 p-3 rounded-lg bg-rose-500/10 text-rose-500 text-xs border border-rose-500/20 font-medium">
               {error}
@@ -126,27 +117,6 @@ export const Login = () => {
             </button>
           </form>
 
-          {/* Quick credentials fills */}
-          <div className="mt-6 pt-6 border-t border-slate-200/40 dark:border-slate-800/40">
-            <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-3">
-              <Info className="w-4 h-4 text-sky-500" />
-              <span>Click to auto-fill demo accounts:</span>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => fillCredentials('student')}
-                className="flex-1 py-1.5 px-3 rounded-lg text-xs font-medium bg-sky-500/10 hover:bg-sky-500/25 text-sky-600 dark:text-sky-400 border border-sky-500/20 transition-all"
-              >
-                Demo Student
-              </button>
-              <button
-                onClick={() => fillCredentials('admin')}
-                className="flex-1 py-1.5 px-3 rounded-lg text-xs font-medium bg-rose-500/10 hover:bg-rose-500/25 text-rose-600 dark:text-rose-400 border border-rose-500/20 transition-all"
-              >
-                Demo Admin
-              </button>
-            </div>
-          </div>
 
           <div className="mt-6 text-center text-xs text-slate-500">
             Don't have an account?{' '}
