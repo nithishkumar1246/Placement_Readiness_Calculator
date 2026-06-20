@@ -1,31 +1,18 @@
-# Frontend overrides
-frontend/node_modules/
-frontend/dist/
-frontend/dist-ssr/
-frontend/*.log
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
-frontend/pnpm-debug.log*
-frontend/lerna-debug.log*
+# Node.js
+**/node_modules/
+**/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.production
 
-# Backend overrides
-backend/__pycache__/
-backend/*.pyc
-backend/venv/
-backend/env/
-backend/.env
+# Python virtual environments
+**/venv/
+**/.venv/
+**/__pycache__/
+*.pyc
+
+# Local databases and uploads
 backend/database.db
-backend/instance/
 backend/uploads/*
 !backend/uploads/.gitkeep
-
-# IDEs/Editors
-.vscode/
-.idea/
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
